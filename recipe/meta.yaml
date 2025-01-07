@@ -25,14 +25,20 @@ requirements:
     - python
 
 test:
+  source_files:
+    - pyfiglet
   imports:
     - pyfiglet
     - pyfiglet.fonts
   commands:
     - pip check
     - pyfiglet --help
+    # Need figlet instalation https://github.com/pwaller/pyfiglet/blob/v0.8.post0/test_font.sh
+    # Need to build a separate package to test fonts. Just skip test.
+    #- python pyfiglet/test.py
   requires:
     - pip
+    - pytest
 
 about:
   home: https://github.com/pwaller/pyfiglet
